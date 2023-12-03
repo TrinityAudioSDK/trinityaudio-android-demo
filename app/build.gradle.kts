@@ -45,13 +45,6 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    // https://developer.android.com/studio/projects/android-library#psd-add-library-dependency
-
-    // For get a user-resettable advertising ID
-    // https://developer.android.com/training/articles/ad-id
-    implementation("com.google.android.gms:play-services-ads-identifier:18.0.1")
-    implementation("androidx.preference:preference-ktx:1.2.1")
-
     implementation("ai.trinityaudio:trinity-player:0.0.3")
 
 }
