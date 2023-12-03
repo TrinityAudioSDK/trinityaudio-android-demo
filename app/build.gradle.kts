@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "ai.trinityaudio.sdk.sample_aar"
+    namespace = "ai.trinityaudio.sdk.sample"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "ai.trinityaudio.sdk.sample_aar"
+        applicationId = "ai.trinityaudio.sdk.sample"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

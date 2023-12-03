@@ -1,4 +1,4 @@
-package ai.trinityaudio.sdk.sample_aar
+package ai.trinityaudio.sdk.sample
 
 import org.junit.Test
 

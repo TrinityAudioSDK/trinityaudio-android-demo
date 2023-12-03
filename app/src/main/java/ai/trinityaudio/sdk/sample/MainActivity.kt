@@ -1,9 +1,10 @@
-package ai.trinityaudio.sdk.sample_aar
+package ai.trinityaudio.sdk.sample
 
 import ai.trinityaudio.sdk.TrinityAudio
 import ai.trinityaudio.sdk.TrinityPlayerListener
 import ai.trinityaudio.sdk.TrinityPlayerView
 import ai.trinityaudio.sdk.TrinityStates
+
 import android.graphics.Point
 import android.os.Bundle
 import android.view.ViewGroup
