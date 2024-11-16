@@ -78,6 +78,6 @@ class PulsePlayerFragment :
         toggled: Boolean,
         expectedHeight: Int,
     ) {
-        // Not implemented yet
+        // Will not be called if the unit is not support sliding effect
     }
 }
