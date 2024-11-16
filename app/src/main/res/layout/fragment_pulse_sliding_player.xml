@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent" >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <FrameLayout
+            android:id="@+id/scrollRootView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:id="@+id/topLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp">
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/playerIdText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PlayerID:"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/playButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Play"
+                        tools:ignore="HardcodedText" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <Button
+                        android:id="@+id/pauseButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Pause"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/mainUsageContentTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/title"
+                            android:textAlignment="viewStart"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/initial_text"
+                            android:textSize="18sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/second_text"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <ai.trinityaudio.sdk.TrinityPlayerView
+                        android:id="@+id/trinityPlayerView"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/white"
+                        android:layout_height="145dp"
+                        android:layout_gravity="bottom" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/description"
+                    android:textSize="18sp" />
+
+                <FrameLayout
+                    android:id="@+id/bottomLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp">
+
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

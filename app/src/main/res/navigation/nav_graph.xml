@@ -10,11 +10,18 @@
         android:name="ai.trinityaudio.sdk.sample.MenuFragment"
         android:label="menu"
         tools:layout="@layout/fragment_menu" />
-
     <fragment
         android:id="@+id/mainUsage"
-        android:name="ai.trinityaudio.sdk.sample.MainFragment"
+        android:name="ai.trinityaudio.sdk.sample.MainUsageFragment"
         android:label="main_usage"
         tools:layout="@layout/fragment_main_usage" />
+    <fragment
+        android:id="@+id/pulsePlayerFragment"
+        android:name="ai.trinityaudio.sdk.sample.PulsePlayerFragment"
+        android:label="PulsePlayerFragment" />
+    <fragment
+        android:id="@+id/pulseSlidingPlayerFragment"
+        android:name="ai.trinityaudio.sdk.sample.PulseSlidingPlayerFragment"
+        android:label="PulseSlidingPlayerFragment" />
 
 </navigation>
