@@ -1,9 +1,9 @@
 package ai.trinityaudio.sdk.sample
 
 import ai.trinityaudio.sdk.TrinityAudio
-import ai.trinityaudio.sdk.TrinityPlayerListener
-import ai.trinityaudio.sdk.TrinityStates
 import ai.trinityaudio.sdk.sample.databinding.FragmentMainUsageBinding
+import ai.trinityaudio.sdk.tts.TrinityPlayerListener
+import ai.trinityaudio.sdk.tts.TrinityStates
 import android.annotation.SuppressLint
 import android.graphics.Point
 import android.os.Bundle
@@ -13,10 +13,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.json.JSONObject
 
-class MainFragment : Fragment(), TrinityPlayerListener {
-
-    private var _binding: FragmentMainUsageBinding? = null
-    private val binding get() = _binding!!
+class MainUsageFragment :
+    Fragment(),
+    TrinityPlayerListener {
+    private lateinit var binding: FragmentMainUsageBinding
 
     private lateinit var trinityAudio: TrinityAudio
     private var eventLogs = ""
@@ -27,14 +27,18 @@ class MainFragment : Fragment(), TrinityPlayerListener {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _binding = FragmentMainUsageBinding.inflate(inflater, container, false)
+        binding = FragmentMainUsageBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?,
+    ) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             btnPlay.setOnClickListener {
@@ -46,10 +50,12 @@ class MainFragment : Fragment(), TrinityPlayerListener {
                 // or trinityAudio.pause(trinityAudio.playerId)
             }
         }
+
         // Initialize TrinityAudio
         trinityAudio = TrinityAudio.create(requireContext(), this)
-        val autoplay = arguments?.getBoolean("autoplay", false)
-        trinityAudio.autoPlay = autoplay ?: false
+        val autoplay = arguments?.getBoolean(Constant.KEY_AUTOPLAY, true)
+        trinityAudio.autoPlay = autoplay ?: true
+
         // Load the Trinity player
         loadTrinityPlayer()
     }
@@ -63,7 +69,7 @@ class MainFragment : Fragment(), TrinityPlayerListener {
             binding.trinityPlayerView,
             unitID,
             fabViewTopLeftCoordinates,
-            contentURL
+            contentURL,
         )
     }
 
@@ -90,15 +96,13 @@ class MainFragment : Fragment(), TrinityPlayerListener {
     }
 
     @SuppressLint("SetTextI18n")
-    override fun trinityOnPlayerReady(service: TrinityAudio, playerId: String) {
+    override fun trinityOnPlayerReady(
+        service: TrinityAudio,
+        playerId: String,
+    ) {
         requireActivity().runOnUiThread {
             // After this method invoked. We could access the playerId later with `trinityAudio.playerId`
             binding.playerIdLb.text = "PlayerId: $playerId"
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

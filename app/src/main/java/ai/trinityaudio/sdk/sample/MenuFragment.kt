@@ -1,5 +1,6 @@
 package ai.trinityaudio.sdk.sample
 
+import ai.trinityaudio.sdk.sample.Constant.KEY_AUTOPLAY
 import ai.trinityaudio.sdk.sample.databinding.FragmentMenuBinding
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,15 +20,46 @@ class MenuFragment : Fragment() {
         binding.apply {
             mainUsageBt.setOnClickListener {
                 val navController = findNavController()
-                navController.navigate(R.id.mainUsage)
+                val bundle =
+                    Bundle().apply {
+                        putBoolean(KEY_AUTOPLAY, false)
+                    }
+                navController.navigate(R.id.mainUsage, bundle)
             }
             autoPlayUsageBt.setOnClickListener {
                 val navController = findNavController()
                 val bundle =
                     Bundle().apply {
-                        putBoolean("autoplay", true)
+                        putBoolean(KEY_AUTOPLAY, true)
                     }
                 navController.navigate(R.id.mainUsage, bundle)
+            }
+
+            pulseUsageBt.setOnClickListener {
+                val navController = findNavController()
+                val bundle =
+                    Bundle().apply {
+                        putBoolean(KEY_AUTOPLAY, false)
+                    }
+                navController.navigate(R.id.pulsePlayerFragment, bundle)
+            }
+
+            pulseSlidingUsageBt.setOnClickListener {
+                val navController = findNavController()
+                val bundle =
+                    Bundle().apply {
+                        putBoolean(KEY_AUTOPLAY, false)
+                    }
+                navController.navigate(R.id.pulseSlidingPlayerFragment, bundle)
+            }
+
+            pulseAutoPlayUsageBt.setOnClickListener {
+                val navController = findNavController()
+                val bundle =
+                    Bundle().apply {
+                        putBoolean(KEY_AUTOPLAY, true)
+                    }
+                navController.navigate(R.id.pulseSlidingPlayerFragment, bundle)
             }
         }
     }

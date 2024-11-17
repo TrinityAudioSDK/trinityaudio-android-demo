@@ -26,13 +26,32 @@
                 android:id="@+id/mainUsageBt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Main Usage" />
+                android:text="@string/tts_main_usage" />
 
             <Button
                 android:id="@+id/autoPlayUsageBt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Auto Play" />
+                android:text="@string/tts_autoplay"
+                android:layout_marginBottom="30dp"/>
+
+            <Button
+                android:id="@+id/pulseUsageBt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pulse" />
+
+            <Button
+                android:id="@+id/pulseSlidingUsageBt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pulse_sliding" />
+
+            <Button
+                android:id="@+id/pulseAutoPlayUsageBt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pulse_autoplay" />
 
         </LinearLayout>
 
