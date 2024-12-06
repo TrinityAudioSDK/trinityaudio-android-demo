@@ -55,6 +55,7 @@ class MainUsageFragment :
         trinityAudio = TrinityAudio.create(requireContext(), this)
         val autoplay = arguments?.getBoolean(Constant.KEY_AUTOPLAY, true)
         trinityAudio.autoPlay = autoplay ?: true
+        trinityAudio.enableMediaControl = true
 
         // Load the Trinity player
         loadTrinityPlayer()

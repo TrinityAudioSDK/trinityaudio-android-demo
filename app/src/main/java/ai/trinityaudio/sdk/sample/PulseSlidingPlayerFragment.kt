@@ -49,7 +49,7 @@ class PulseSlidingPlayerFragment :
 
             val autoplay = arguments?.getBoolean(Constant.KEY_AUTOPLAY,true)
             trinityAudio.autoPlay = autoplay ?: true
-
+            trinityAudio.enableMediaControl = true
             trinityAudio.render(
                 rootView = binding.scrollRootView,
                 playerView = binding.trinityPlayerView,
