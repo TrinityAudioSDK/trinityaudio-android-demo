@@ -41,6 +41,7 @@ class PulsePlayerFragment :
 
             val autoplay = arguments?.getBoolean(Constant.KEY_AUTOPLAY,true)
             trinityAudio.autoPlay = autoplay ?: true
+            trinityAudio.enableMediaControl = true
 
             playButton.setOnClickListener {
                 trinityAudio.play()
